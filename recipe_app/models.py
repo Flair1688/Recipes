@@ -16,7 +16,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField(null=True, blank=True)
     number = models.IntegerField() # Количество порций
-    video = models.FileField(upload_to='videos/',blank=True, null=True, verbose_name="")
+    video = models.FileField(upload_to='recipe_app/videos/', blank=True, null=True, verbose_name="")
     #category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='категория')
     img = models.ImageField(upload_to='recipe_app/images', blank=True)
 
