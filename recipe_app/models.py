@@ -15,11 +15,15 @@ class Recipe(models.Model):
     create = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=150)
     description = models.TextField(null=True, blank=True)
-    number = models.IntegerField() # Количество порций
+    #number = models.IntegerField()
     video = models.FileField(upload_to='recipe_app/videos/', blank=True, null=True, verbose_name="")
     #category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='категория')
-    img = models.ImageField(upload_to='recipe_app/images', blank=True)
+    image = models.ImageField(blank=True, upload_to='images/%Y/%m/%d', verbose_name='Ссылка картинки')
 
     def __str__(self):
         return self.title
+
+
+
+
 

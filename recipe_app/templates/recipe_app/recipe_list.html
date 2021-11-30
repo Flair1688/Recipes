@@ -1,0 +1,11 @@
+<!-- templates/home.html -->
+
+{% block content %}
+  {% for recipe in object_list %}
+    <div class="recipe-entry">
+      <h2><a href="">{{ recipe.title }}</a></h2>
+      <p>{{ recipe.description }}</p>
+        <img src="media/{{ recipe.image }}">
+    </div>
+  {% endfor %}
+{% endblock content %}
