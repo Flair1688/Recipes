@@ -1,11 +1,8 @@
 <!-- templates/post_detail.html -->
-
 {% extends 'recipe_app/base.html' %}
 
 {% block content %}
-  {% for recipe in object_list %}
-
-      <div class="album py-5 bg-light">
+<div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
       <hr class="featurette-divider">
@@ -16,7 +13,7 @@
                 <p class="clip"> {{ recipe.description }} </p>
             </div>
           <div class="col-md-3 order-md-1">
-            <img  src="media/{{ recipe.image }}" style="height: 220px; width: 240px"  alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="{{ recipe.image.url }}" style="height: 220px; width: 240px"  alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -29,5 +26,4 @@
 
       </div><!-- /.container -->
 
-{% endfor %}
 {% endblock content %}
