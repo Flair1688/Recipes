@@ -14,7 +14,7 @@ class Recipe(models.Model):
     user = models.ForeignKey(User,  on_delete=models.CASCADE, null=True, blank=True)
     create = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=150)
-    description = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=False)
     #number = models.IntegerField()
     video = models.FileField(upload_to='recipe_app/videos/', blank=True, null=True, verbose_name="")
     #category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='категория')
