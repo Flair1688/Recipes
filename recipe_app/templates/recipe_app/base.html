@@ -1,4 +1,5 @@
-<!-- templates/home.html -->
+{% load static %}
+
 <html lang="ru">
 
 <head>
@@ -6,27 +7,19 @@
   <meta charset="utf-8">
   <!-- Настройка viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>...</title>
+  <title>Chef Rey</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 !-- Bootstrap CSS (Cloudflare CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <!-- jQuery (Cloudflare CDN) -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- Bootstrap Bundle JS (Cloudflare CDN) -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <style>
-   p.clip {
-    width: 700px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
-    line-height: 1.3em;
-    height: 10.7em;
-   }
-  </style>
+
+
 </head>
 
- <body>
+ <body >
 <script defer>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -50,7 +43,7 @@
 
 
     <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Offcanvas navbar</a>
+      <a class="navbar-brand" href="#">Главная страница</a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -58,17 +51,9 @@
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Авторы <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Notifications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Switch account</a>
-          </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -79,52 +64,25 @@
           </li>
         </ul>
        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="text" placeholder="Что вы ищите?" style="width: 400px" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+           <li class="form-inline my-2 my-lg-0">
+            <a class="nav-link" href="#">Личный кабинет</a>
+          </li>
         </form>
       </div>
     </nav>
 
-   <!-- <div class="recipe-entry">
-        <p><img src="media/{{ recipe.image }}" width="180" height="180">
-          <h2><a href="">{{ recipe.title }}</a></h2>
-      </p>
-    </div>
-
-<div class="row">
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <a href="media/{{ recipe.image }}">
-        <img src="media/{{ recipe.image }}" width="280" height="280">
-        <div class="caption">
-          <h2>{{ recipe.title }}</h2>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>-->
 
 
-    <main role="main">
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p>
-        </div>
-      </section>
-    </main>
 {% block content %}
 
 {% endblock content %}
- <footer class="text-muted">
-      <div class="container">
+ <footer  class="text-muted bgcolor1">
+      <div class="container ">
         <p class="float-right">
-          <a href="#">Back to top</a>
+          <a href="#">Вернуться в начало</a>
         </p>
         <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
         <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>

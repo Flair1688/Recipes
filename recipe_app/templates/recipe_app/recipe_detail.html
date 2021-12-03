@@ -1,6 +1,5 @@
 <!-- templates/post_detail.html -->
 {% extends 'recipe_app/base.html' %}
-
 {% block content %}
 <div class="album py-5 bg-light">
         <div class="container">
@@ -8,19 +7,26 @@
       <hr class="featurette-divider">
         <div class="container marketing">
           <div class="row featurette">
+
             <div class="col-md-8 order-md-2">
+
               <a href="{% url 'recipe_detail' recipe.pk %}" class="lead"><h2 class="featurette-heading">{{ recipe.title }}</h2></a>
                 <p class="clip"> {{ recipe.description }} </p>
             </div>
-          <div class="col-md-3 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="{{ recipe.image.url }}" style="height: 220px; width: 240px"  alt="Generic placeholder image">
-          </div>
+
         </div>
+            {% if recipe.video %}
+                <div class="video">
+                    <video preload="auto" controls class="video_item"  src="{{ MEDIA_ROOT }}{{ recipe.video.url }}"></video>
+                </div>
+            {% else %}
+                <div class="image_recipe_detail">
+                    <img class="featurette-image img-fluid mx-auto" src="{{ recipe.image.url }}" style="height: 720px; width: 740px"  alt="Generic placeholder image">
+                </div>
+            {% endif %}
       </div>
     </div>
   </div>
-
-
 
         <!-- /END THE FEATURETTES -->
 
